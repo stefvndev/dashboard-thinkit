@@ -132,6 +132,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: all 0.2s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
 
     &__top {
       display: flex;
@@ -199,7 +204,7 @@
       background-color: $table-gray;
       width: 100%;
       height: 5.6rem;
-      padding: 1.8rem 16rem 1.8rem 5rem;
+      padding: 1.8rem 17rem 1.8rem 5rem;
       font-size: 1.4rem;
       color: $light-gray;
       text-transform: uppercase;
@@ -223,7 +228,7 @@
 
       span {
         display: flex;
-        gap: 1rem;
+        gap: 2rem;
         align-items: center;
 
         button {

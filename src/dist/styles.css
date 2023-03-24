@@ -139,6 +139,10 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: all 0.2s;
+}
+.boxes__box:hover {
+  transform: scale(1.05);
 }
 .boxes__box__top {
   display: flex;
@@ -199,7 +203,7 @@ body {
   background-color: #fafafb;
   width: 100%;
   height: 5.6rem;
-  padding: 1.8rem 16rem 1.8rem 5rem;
+  padding: 1.8rem 17rem 1.8rem 5rem;
   font-size: 1.4rem;
   color: #8492a6;
   text-transform: uppercase;
@@ -222,7 +226,7 @@ body {
 }
 .posts__grid__row span {
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
   align-items: center;
 }
 .posts__grid__row span button {
