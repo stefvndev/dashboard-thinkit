@@ -3,6 +3,7 @@ import { BiUser } from "react-icons/bi";
 
 interface Props {
   id: number;
+  name: string;
   username: string;
   email: string;
   phone: number;
@@ -39,7 +40,7 @@ const User: FC = () => {
               <div className="boxes__box">
                 <div className="boxes__box__top">
                   <BiUser className="boxes__box__top__icon" />
-                  <p>Stefan</p>
+                  <p>{user.name}</p>
                 </div>
                 {/* user info */}
                 <div className="boxes__box__infos">
