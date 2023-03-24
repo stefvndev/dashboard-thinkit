@@ -1,6 +1,7 @@
+import { FC } from "react";
 import { BiUser } from "react-icons/bi";
 
-const Header = () => {
+const Header: FC = () => {
   return (
     <>
       <header className="dash__top">

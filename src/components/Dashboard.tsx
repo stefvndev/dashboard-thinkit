@@ -2,8 +2,9 @@ import Navbar from "./Navbar";
 import Header from "./Header";
 import User from "./User";
 import Posts from "./Posts";
+import { FC } from "react";
 
-const Dashboard = () => {
+const Dashboard: FC = () => {
   return (
     <>
       <div className="dash-container">

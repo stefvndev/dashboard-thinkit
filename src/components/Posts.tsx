@@ -1,9 +1,9 @@
+import { FC } from "react";
 import { AiOutlineFile } from "react-icons/ai";
 
-const Posts = () => {
+const Posts: FC = () => {
   return (
     <>
-      {" "}
       <div className="posts">
         <div className="posts__title">
           <AiOutlineFile />
