@@ -2,9 +2,29 @@ import Navbar from "./Navbar";
 import Header from "./Header";
 import User from "./User";
 import Posts from "./Posts";
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
+
+type Task = {
+  title: string;
+  id: number;
+};
 
 const Dashboard: FC = () => {
+  const [tasks, setTasks] = useState<Task[]>([]);
+
+  const url: string = "https://jsonplaceholder.typicode.com/todos/?_limit=5";
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(url);
+      const json = await response.json();
+      setTasks(json);
+    };
+    fetchData();
+  }, [url]);
+
+  console.log(tasks);
+
   return (
     <>
       <div className="dash-container">
@@ -19,7 +39,7 @@ const Dashboard: FC = () => {
               {/* users */}
               <User />
               {/* posts */}
-              <Posts />
+              <Posts tasks={tasks} />
             </div>
           </div>
         </div>

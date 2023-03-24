@@ -1,27 +1,16 @@
-import { FC, useState, useEffect } from "react";
+import { FC } from "react";
 import { AiOutlineFile } from "react-icons/ai";
 
-type Props = {
+type Task = {
   title: string;
   id: number;
 };
 
-const Posts: FC = () => {
-  const [tasks, setTasks] = useState<Props[]>([]);
+type PostsProps = {
+  tasks: Task[];
+};
 
-  const url: string = "https://jsonplaceholder.typicode.com/todos/?_limit=5";
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch(url);
-      const json = await response.json();
-      setTasks(json);
-    };
-    fetchData();
-  }, [url]);
-
-  console.log(tasks);
-
+const Posts: FC<PostsProps> = ({ tasks }) => {
   return (
     <>
       <div className="posts">
