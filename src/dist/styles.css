@@ -226,6 +226,14 @@ body {
   justify-content: space-between;
   font-weight: 500;
 }
+.posts__grid__row p {
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+.posts__grid__row p:hover {
+  color: #3754db;
+}
 .posts__grid__row span {
   display: flex;
   gap: 2rem;

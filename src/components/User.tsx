@@ -23,7 +23,7 @@ const User: FC = () => {
     fetchData();
   }, [url]);
 
-  console.log(users);
+  //   console.log(users);
 
   return (
     <>

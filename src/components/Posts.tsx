@@ -1,7 +1,27 @@
-import { FC } from "react";
+import { FC, useState, useEffect } from "react";
 import { AiOutlineFile } from "react-icons/ai";
 
+type Props = {
+  title: string;
+  id: number;
+};
+
 const Posts: FC = () => {
+  const [tasks, setTasks] = useState<Props[]>([]);
+
+  const url: string = "https://jsonplaceholder.typicode.com/todos/?_limit=5";
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(url);
+      const json = await response.json();
+      setTasks(json);
+    };
+    fetchData();
+  }, [url]);
+
+  console.log(tasks);
+
   return (
     <>
       <div className="posts">
@@ -15,41 +35,15 @@ const Posts: FC = () => {
             <p>Actions</p>
           </div>
 
-          <div className="posts__grid__row">
-            <p>Title</p>
-            <span>
-              <button>View</button>
-              <button>Delete</button>
-            </span>
-          </div>
-          <div className="posts__grid__row">
-            <p>Title</p>
-            <span>
-              <button>View</button>
-              <button>Delete</button>
-            </span>
-          </div>
-          <div className="posts__grid__row">
-            <p>Title</p>
-            <span>
-              <button>View</button>
-              <button>Delete</button>
-            </span>
-          </div>
-          <div className="posts__grid__row">
-            <p>Title</p>
-            <span>
-              <button>View</button>
-              <button>Delete</button>
-            </span>
-          </div>
-          <div className="posts__grid__row">
-            <p>Title</p>
-            <span>
-              <button>View</button>
-              <button>Delete</button>
-            </span>
-          </div>
+          {tasks.map((task) => (
+            <div key={task.id} className="posts__grid__row">
+              <p>{task.title}</p>
+              <span>
+                <button>View</button>
+                <button>Delete</button>
+              </span>
+            </div>
+          ))}
         </div>
       </div>
     </>

@@ -228,6 +228,16 @@
       justify-content: space-between;
       font-weight: 500;
 
+      p {
+        text-transform: capitalize;
+        cursor: pointer;
+        transition: all 0.1s;
+
+        &:hover {
+          color: $blue;
+        }
+      }
+
       span {
         display: flex;
         gap: 2rem;
