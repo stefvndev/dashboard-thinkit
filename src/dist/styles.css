@@ -1,0 +1,242 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Montserrat:wght@400;500;700&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: white;
+  font-family: "Inter", sans-serif;
+  position: relative;
+}
+
+.container {
+  max-width: 133rem !important;
+  margin: 0 auto !important;
+  padding: 0 2.5rem !important;
+  border: 1px solid red;
+}
+
+.dash-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 3rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashboard {
+  display: flex;
+  width: 130rem;
+  height: 85rem;
+  margin: 0 auto;
+  border-radius: 1.6rem;
+  overflow: hidden;
+  box-shadow: 0px 1px 18px 0px rgba(0, 0, 0, 0.27);
+}
+.dashboard nav {
+  width: 25rem;
+  height: 100%;
+  padding: 3rem 2rem;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+.dashboard nav h1 {
+  font-size: 2.1rem;
+  color: #3754db;
+  cursor: pointer;
+  transition: all 0.1s;
+  font-family: "Montserrat", sans-serif;
+}
+.dashboard nav h1:hover {
+  color: #4c6fff;
+}
+
+.dash {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.dash__top {
+  height: 8.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  color: #27272e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3rem;
+}
+.dash__top h2 {
+  font-size: 2.8rem;
+}
+.dash__top__profile {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+.dash__top__profile p {
+  font-weight: 600;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+.dash__top__profile p:hover {
+  color: #4c6fff;
+}
+.dash__top__profile__icon {
+  background-color: #a0aec0;
+  color: white;
+  font-size: 2.5rem;
+  border-radius: 50%;
+  width: 3.5rem;
+  height: auto;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+.dash__user-posts {
+  width: 100%;
+  height: 100%;
+  background-color: #f5f5f5;
+  padding: 2rem 3rem;
+}
+.dash__user-posts__user {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.dash__user-posts__user__title {
+  font-size: 1.9rem;
+  color: #425466;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+.boxes {
+  display: flex;
+  width: 100%;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+.boxes__box {
+  width: 18rem;
+  height: 16.5rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  margin-top: 3rem;
+  background: rgb(71, 118, 230);
+  background: linear-gradient(90deg, rgb(71, 118, 230) 25%, rgb(142, 84, 233) 75%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.boxes__box__top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: -2.5rem;
+}
+.boxes__box__top p {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.boxes__box__top__icon {
+  font-size: 7rem;
+  border-radius: 50%;
+  padding: 1.3rem;
+  background-color: #ffc092;
+  color: white;
+}
+.boxes__box__infos {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: left;
+  width: 100%;
+  padding: 1rem 2rem;
+}
+.boxes__box__infos p {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+}
+.posts__title {
+  font-size: 1.9rem;
+  color: #425466;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+.posts__grid {
+  width: 100%;
+  height: auto;
+  margin-top: 2rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  border-radius: 1.8rem;
+  overflow: hidden;
+  box-shadow: 0px 1px 18px 0px rgba(0, 0, 0, 0.1);
+}
+.posts__grid__top {
+  background-color: #fafafb;
+  width: 100%;
+  height: 5.6rem;
+  padding: 1.8rem 16rem 1.8rem 5rem;
+  font-size: 1.4rem;
+  color: #8492a6;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 600;
+}
+.posts__grid__row {
+  background-color: white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  width: 100%;
+  height: 5.6rem;
+  font-size: 1.6rem;
+  color: #4c6fff;
+  padding: 1.8rem 5rem 1.8rem 5rem;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+}
+.posts__grid__row span {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.posts__grid__row span button {
+  font-size: 1.6rem;
+  color: #4c6fff;
+  font-weight: 500;
+  background-color: transparent;
+  border: 1.8px solid #4c6fff;
+  border-radius: 0.4rem;
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.posts__grid__row span button:hover {
+  color: white;
+  background-color: #4c6fff;
+}/*# sourceMappingURL=styles.css.map */

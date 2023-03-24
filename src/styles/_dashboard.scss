@@ -1,0 +1,248 @@
+@use "../styles/global/" as *;
+
+.dash-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 3rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashboard {
+  display: flex;
+  width: 130rem;
+  height: 85rem;
+  margin: 0 auto;
+  border-radius: 1.6rem;
+  overflow: hidden;
+  box-shadow: 0px 1px 18px 0px rgba(0, 0, 0, 0.27);
+
+  nav {
+    width: 25rem;
+    height: 100%;
+    padding: 3rem 2rem;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+
+    h1 {
+      font-size: 2.1rem;
+      color: $blue;
+      cursor: pointer;
+      transition: all 0.1s;
+      font-family: $mons-font;
+
+      &:hover {
+        color: $light-blue;
+      }
+    }
+  }
+}
+
+.dash {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &__top {
+    height: 8.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    color: $black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3rem;
+
+    h2 {
+      font-size: 2.8rem;
+    }
+
+    &__profile {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+
+      p {
+        font-weight: 600;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: all 0.1s;
+
+        &:hover {
+          color: $light-blue;
+        }
+      }
+
+      &__icon {
+        background-color: $user-bg;
+        color: white;
+        font-size: 2.5rem;
+        border-radius: 50%;
+        width: 3.5rem;
+        height: auto;
+        padding: 0.5rem;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__user-posts {
+    width: 100%;
+    height: 100%;
+    background-color: $bg-gray;
+    padding: 2rem 3rem;
+
+    &__user {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      &__title {
+        font-size: 1.9rem;
+        color: $gray;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+.boxes {
+  display: flex;
+  width: 100%;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+
+  &__box {
+    width: 18rem;
+    height: 16.5rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    margin-top: 3rem;
+    background: rgb(71, 118, 230);
+    background: linear-gradient(
+      90deg,
+      rgba(71, 118, 230, 1) 25%,
+      rgba(142, 84, 233, 1) 75%
+    );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__top {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      margin-top: -2.5rem;
+
+      p {
+        color: white;
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+
+      &__icon {
+        font-size: 7rem;
+        border-radius: 50%;
+        padding: 1.3rem;
+        background-color: $user-yellow;
+        color: white;
+      }
+    }
+
+    &__infos {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      text-align: left;
+      width: 100%;
+      padding: 1rem 2rem;
+
+      p {
+        color: white;
+        font-size: 1.2rem;
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+
+  &__title {
+    font-size: 1.9rem;
+    color: $gray;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+  }
+
+  &__grid {
+    width: 100%;
+    height: auto;
+    margin-top: 2rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    border-radius: 1.8rem;
+    overflow: hidden;
+    box-shadow: 0px 1px 18px 0px rgba(0, 0, 0, 0.1);
+
+    &__top {
+      background-color: $table-gray;
+      width: 100%;
+      height: 5.6rem;
+      padding: 1.8rem 16rem 1.8rem 5rem;
+      font-size: 1.4rem;
+      color: $light-gray;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 600;
+    }
+
+    &__row {
+      background-color: $white;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+      width: 100%;
+      height: 5.6rem;
+      font-size: 1.6rem;
+      color: $light-blue;
+      padding: 1.8rem 5rem 1.8rem 5rem;
+      display: flex;
+      justify-content: space-between;
+      font-weight: 500;
+
+      span {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+
+        button {
+          font-size: 1.6rem;
+          color: $light-blue;
+          font-weight: 500;
+          background-color: transparent;
+          border: 1.8px solid $light-blue;
+          border-radius: 0.4rem;
+          padding: 0.5rem 2rem;
+          cursor: pointer;
+          transition: all 0.15s;
+
+          &:hover {
+            color: white;
+            background-color: $light-blue;
+          }
+        }
+      }
+    }
+  }
+}
