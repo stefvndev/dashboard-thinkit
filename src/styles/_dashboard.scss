@@ -268,3 +268,63 @@
 .active {
   opacity: 100%;
 }
+
+.modal {
+  width: 50rem;
+  height: 35rem;
+  border: none;
+  position: fixed;
+  z-index: 10;
+  background-color: white;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 1rem;
+  box-shadow: 0px 1px 18px 0px rgba(0, 0, 0, 0.2);
+
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8rem 3rem 5rem 3rem;
+
+  p {
+    font-size: 2rem;
+    color: $light-blue;
+    font-weight: 500;
+  }
+
+  button {
+    color: red;
+    border: 2px solid red;
+    background-color: transparent;
+    padding: 0.8rem 2rem;
+    font-size: 2rem;
+    font-family: $mons-font;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 0.7rem;
+    transition: all 0.2s;
+
+    &:hover {
+      background-color: red;
+      color: white;
+    }
+  }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  z-index: 10;
+  opacity: 25%;
+  display: none;
+}
+
+.show-modal {
+  display: flex;
+}

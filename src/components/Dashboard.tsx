@@ -26,7 +26,7 @@ const Dashboard: FC = () => {
               {/* users */}
               <User fetchUserTodos={fetchUserTodos} />
               {/* posts */}
-              {/* <Posts currentPosts={tasks} /> */}
+              {/* <Posts  /> */}
             </div>
           </div>
         </div>

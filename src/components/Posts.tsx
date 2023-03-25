@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import { AiOutlineFile } from "react-icons/ai";
 
 type Task = {
@@ -11,8 +11,24 @@ type PostsProps = {
 };
 
 const Posts: FC<PostsProps> = ({ currentPosts }) => {
+  const [openModal, setOpenModal] = useState(false);
+
+  const showModal = () => {
+    setOpenModal(!openModal);
+  };
+
   return (
     <>
+      <div
+        className={`overlay ${openModal ? "show-modal" : ""}`}
+        onClick={showModal}
+      ></div>
+
+      <div className={`modal ${openModal ? "show-modal" : ""}`}>
+        <p>Text</p>
+        <button onClick={showModal}>Exit</button>
+      </div>
+
       <div className="posts">
         <div className="posts__title">
           <AiOutlineFile />
@@ -28,7 +44,7 @@ const Posts: FC<PostsProps> = ({ currentPosts }) => {
             <div key={task.id} className="posts__grid__row">
               <p>{task.title}</p>
               <span>
-                <button>View</button>
+                <button onClick={showModal}>View</button>
                 <button>Delete</button>
               </span>
             </div>
