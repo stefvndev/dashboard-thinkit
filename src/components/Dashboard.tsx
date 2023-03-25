@@ -1,29 +1,16 @@
 import Navbar from "./Navbar";
 import Header from "./Header";
 import User from "./User";
-import Posts from "./Posts";
-import { FC, useEffect, useState } from "react";
-
-type Task = {
-  title: string;
-  id: number;
-};
+import { FC } from "react";
 
 const Dashboard: FC = () => {
-  const [tasks, setTasks] = useState<Task[]>([]);
-
-  const url: string = "https://jsonplaceholder.typicode.com/todos/?_limit=5";
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch(url);
-      const json = await response.json();
-      setTasks(json);
-    };
-    fetchData();
-  }, [url]);
-
-  console.log(tasks);
+  const fetchUserTodos = async (userId: number) => {
+    const response = await fetch(
+      `https://jsonplaceholder.typicode.com/todos?userId=${userId}&_limit=5`
+    );
+    const todos = await response.json();
+    return todos;
+  };
 
   return (
     <>
@@ -37,9 +24,9 @@ const Dashboard: FC = () => {
             <Header />
             <div className="dash__user-posts">
               {/* users */}
-              <User />
+              <User fetchUserTodos={fetchUserTodos} />
               {/* posts */}
-              <Posts tasks={tasks} />
+              {/* <Posts currentPosts={tasks} /> */}
             </div>
           </div>
         </div>

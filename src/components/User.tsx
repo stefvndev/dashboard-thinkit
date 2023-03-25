@@ -1,16 +1,27 @@
 import { FC, useEffect, useState } from "react";
 import { BiUser } from "react-icons/bi";
+import Posts from "./Posts";
 
-interface Props {
+type Props = {
   id: number;
   name: string;
   username: string;
   email: string;
-  phone: number;
-}
+  phone: string;
+};
 
-const User: FC = () => {
+type UserProps = {
+  fetchUserTodos: (userId: number) => Promise<any>;
+};
+
+type Todo = {
+  id: number;
+  title: string;
+};
+
+const User: FC<UserProps> = ({ fetchUserTodos }) => {
   const [users, setUsers] = useState<Props[]>([]);
+  const [currentPosts, setCurrentPosts] = useState<Todo[]>([]);
 
   const url: string = "https://jsonplaceholder.typicode.com/users/?_limit=5";
 
@@ -23,7 +34,10 @@ const User: FC = () => {
     fetchData();
   }, [url]);
 
-  //   console.log(users);
+  const handleUserClick = async (user: Props) => {
+    const todos = await fetchUserTodos(user.id);
+    setCurrentPosts(todos);
+  };
 
   return (
     <>
@@ -37,7 +51,10 @@ const User: FC = () => {
           {users.map((user) => (
             <div key={user.id}>
               {/* single box */}
-              <div className="boxes__box">
+              <div
+                className={`boxes__box`}
+                onClick={() => handleUserClick(user)}
+              >
                 <div className="boxes__box__top">
                   <BiUser className="boxes__box__top__icon" />
                   <p>{user.name}</p>
@@ -53,6 +70,8 @@ const User: FC = () => {
           ))}
         </div>
       </div>
+      {/* posts */}
+      <Posts currentPosts={currentPosts} />
     </>
   );
 };

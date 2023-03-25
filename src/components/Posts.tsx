@@ -7,10 +7,10 @@ type Task = {
 };
 
 type PostsProps = {
-  tasks: Task[];
+  currentPosts: Task[];
 };
 
-const Posts: FC<PostsProps> = ({ tasks }) => {
+const Posts: FC<PostsProps> = ({ currentPosts }) => {
   return (
     <>
       <div className="posts">
@@ -24,7 +24,7 @@ const Posts: FC<PostsProps> = ({ tasks }) => {
             <p>Actions</p>
           </div>
 
-          {tasks.map((task) => (
+          {currentPosts.map((task) => (
             <div key={task.id} className="posts__grid__row">
               <p>{task.title}</p>
               <span>
