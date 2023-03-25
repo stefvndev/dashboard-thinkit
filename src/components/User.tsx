@@ -22,6 +22,7 @@ type Todo = {
 const User: FC<UserProps> = ({ fetchUserTodos }) => {
   const [users, setUsers] = useState<Props[]>([]);
   const [currentPosts, setCurrentPosts] = useState<Todo[]>([]);
+  const [activeUserId, setActiveUserId] = useState<number | null>(null);
 
   const url: string = "https://jsonplaceholder.typicode.com/users/?_limit=5";
 
@@ -37,6 +38,7 @@ const User: FC<UserProps> = ({ fetchUserTodos }) => {
   const handleUserClick = async (user: Props) => {
     const todos = await fetchUserTodos(user.id);
     setCurrentPosts(todos);
+    setActiveUserId(user.id);
   };
 
   return (
@@ -52,7 +54,9 @@ const User: FC<UserProps> = ({ fetchUserTodos }) => {
             <div key={user.id}>
               {/* single box */}
               <div
-                className={`boxes__box`}
+                className={`boxes__box${
+                  user.id === activeUserId ? " active" : ""
+                }`}
                 onClick={() => handleUserClick(user)}
               >
                 <div className="boxes__box__top">

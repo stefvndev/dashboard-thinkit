@@ -133,10 +133,7 @@
     flex-direction: column;
     align-items: center;
     transition: all 0.2s;
-
-    .active {
-      border: 2px solid red;
-    }
+    opacity: 60%;
 
     &:hover {
       transform: scale(1.05);
@@ -266,4 +263,8 @@
       }
     }
   }
+}
+
+.active {
+  opacity: 100%;
 }

@@ -140,6 +140,7 @@ body {
   flex-direction: column;
   align-items: center;
   transition: all 0.2s;
+  opacity: 60%;
 }
 .boxes__box:hover {
   transform: scale(1.05);
@@ -253,4 +254,8 @@ body {
 .posts__grid__row span button:hover {
   color: white;
   background-color: #4c6fff;
+}
+
+.active {
+  opacity: 100%;
 }/*# sourceMappingURL=styles.css.map */
