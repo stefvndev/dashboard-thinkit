@@ -41,6 +41,8 @@ const User: FC<UserProps> = ({ fetchUserTodos }) => {
     setActiveUserId(user.id);
   };
 
+  // console.log(currentPosts);
+
   return (
     <>
       <div className="dash__user-posts__user">
@@ -75,7 +77,7 @@ const User: FC<UserProps> = ({ fetchUserTodos }) => {
         </div>
       </div>
       {/* posts */}
-      <Posts currentPosts={currentPosts} />
+      <Posts currentPosts={currentPosts} setCurrentPosts={setCurrentPosts} />
     </>
   );
 };

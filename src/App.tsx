@@ -1,7 +1,7 @@
-import React from "react";
+import { FC } from "react";
 import Dashboard from "./components/Dashboard";
 
-function App() {
+const App: FC = () => {
   return (
     <>
       <main>
@@ -9,6 +9,6 @@ function App() {
       </main>
     </>
   );
-}
+};
 
 export default App;

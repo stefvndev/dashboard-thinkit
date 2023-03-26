@@ -269,7 +269,8 @@
   opacity: 100%;
 }
 
-.modal {
+.modal,
+.deleting-modal {
   width: 50rem;
   height: 35rem;
   border: none;
@@ -292,6 +293,9 @@
     font-size: 2rem;
     color: $light-blue;
     font-weight: 500;
+    text-transform: capitalize;
+    text-align: center;
+    line-height: 1.7;
   }
 
   button {
@@ -321,7 +325,7 @@
   bottom: 0;
   background-color: black;
   z-index: 10;
-  opacity: 25%;
+  opacity: 40%;
   display: none;
 }
 

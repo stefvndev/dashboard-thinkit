@@ -260,7 +260,8 @@ body {
   opacity: 100%;
 }
 
-.modal {
+.modal,
+.deleting-modal {
   width: 50rem;
   height: 35rem;
   border: none;
@@ -278,12 +279,17 @@ body {
   align-items: center;
   padding: 8rem 3rem 5rem 3rem;
 }
-.modal p {
+.modal p,
+.deleting-modal p {
   font-size: 2rem;
   color: #4c6fff;
   font-weight: 500;
+  text-transform: capitalize;
+  text-align: center;
+  line-height: 1.7;
 }
-.modal button {
+.modal button,
+.deleting-modal button {
   color: red;
   border: 2px solid red;
   background-color: transparent;
@@ -295,7 +301,8 @@ body {
   border-radius: 0.7rem;
   transition: all 0.2s;
 }
-.modal button:hover {
+.modal button:hover,
+.deleting-modal button:hover {
   background-color: red;
   color: white;
 }
@@ -308,7 +315,7 @@ body {
   bottom: 0;
   background-color: black;
   z-index: 10;
-  opacity: 25%;
+  opacity: 40%;
   display: none;
 }
 
