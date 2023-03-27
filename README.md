@@ -1,6 +1,6 @@
 👉 Live Demo: <a href='https://dashboard-thinkit.vercel.app/'>Live Demo</a>
 
-<h3>Build with:</h3>
+<h3>Built with:</h3>
 
 » React <br>
 » Typescript <br>
