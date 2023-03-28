@@ -2,7 +2,7 @@ import { FC, useEffect, useState } from "react";
 import { BiUser } from "react-icons/bi";
 import Posts from "./Posts";
 
-type Props = {
+export type Props = {
   id: number;
   name: string;
   username: string;
@@ -10,7 +10,7 @@ type Props = {
   phone: string;
 };
 
-type UserProps = {
+export type UserProps = {
   fetchUserTodos: (userId: number) => Promise<any>;
 };
 
@@ -33,7 +33,7 @@ const User: FC<UserProps> = ({ fetchUserTodos }) => {
       setUsers(json);
     };
     fetchData();
-  }, [url]);
+  }, []);
 
   const handleUserClick = async (user: Props) => {
     const todos = await fetchUserTodos(user.id);
@@ -56,6 +56,7 @@ const User: FC<UserProps> = ({ fetchUserTodos }) => {
             <div key={user.id}>
               {/* single box */}
               <div
+                data-testid="user-box"
                 className={`boxes__box${
                   user.id === activeUserId ? " active" : ""
                 }`}
